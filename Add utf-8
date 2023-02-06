@@ -1,0 +1,12 @@
+# urlopne함수를 사용해 원하는 주소로부터 웹페이지를 가져온 후, BeautifulSoup객체로 변환.
+#BeautifulSoup객체는 웹문서를 파싱한 상태이다.
+import requests
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+url = 'https://smartstore.naver.com/woowakgoods'
+req = requests.get(url)
+req.encoding = 'UTF-8'
+html = req.text
+bsObject = BeautifulSoup(html,'html.parser')
+print(bsObject)
